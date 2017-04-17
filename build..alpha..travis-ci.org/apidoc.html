@@ -1,0 +1,4459 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/parris/iz"
+
+    >iz (v0.7.1)</a>
+</h1>
+<h4>Validation for node and the web.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz">module iz</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.iz">
+            function <span class="apidocSignatureSpan"></span>iz
+            <span class="apidocSignatureSpan">(value, error_messages)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.Gruntfile">
+            function <span class="apidocSignatureSpan">iz.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.addValidator">
+            function <span class="apidocSignatureSpan">iz.</span>addValidator
+            <span class="apidocSignatureSpan">(name, func, force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.alphaNumeric">
+            function <span class="apidocSignatureSpan">iz.</span>alphaNumeric
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.amd">
+            function <span class="apidocSignatureSpan">iz.</span>amd
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.anArray">
+            function <span class="apidocSignatureSpan">iz.</span>anArray
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.are">
+            function <span class="apidocSignatureSpan">iz.</span>are
+            <span class="apidocSignatureSpan">(rules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.between">
+            function <span class="apidocSignatureSpan">iz.</span>between
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.blank">
+            function <span class="apidocSignatureSpan">iz.</span>blank
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.boolean">
+            function <span class="apidocSignatureSpan">iz.</span>boolean
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.cc">
+            function <span class="apidocSignatureSpan">iz.</span>cc
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.date">
+            function <span class="apidocSignatureSpan">iz.</span>date
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.decimal">
+            function <span class="apidocSignatureSpan">iz.</span>decimal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.email">
+            function <span class="apidocSignatureSpan">iz.</span>email
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.empty">
+            function <span class="apidocSignatureSpan">iz.</span>empty
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.equal">
+            function <span class="apidocSignatureSpan">iz.</span>equal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.extension">
+            function <span class="apidocSignatureSpan">iz.</span>extension
+            <span class="apidocSignatureSpan">(obj1, obj2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.fileExtension">
+            function <span class="apidocSignatureSpan">iz.</span>fileExtension
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.fileExtensionAudio">
+            function <span class="apidocSignatureSpan">iz.</span>fileExtensionAudio
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.fileExtensionImage">
+            function <span class="apidocSignatureSpan">iz.</span>fileExtensionImage
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.fileExtensionVideo">
+            function <span class="apidocSignatureSpan">iz.</span>fileExtensionVideo
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.inArray">
+            function <span class="apidocSignatureSpan">iz.</span>inArray
+            <span class="apidocSignatureSpan">(value, arr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.int">
+            function <span class="apidocSignatureSpan">iz.</span>int
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.ip">
+            function <span class="apidocSignatureSpan">iz.</span>ip
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.maxLength">
+            function <span class="apidocSignatureSpan">iz.</span>maxLength
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.minLength">
+            function <span class="apidocSignatureSpan">iz.</span>minLength
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.multiple">
+            function <span class="apidocSignatureSpan">iz.</span>multiple
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.number">
+            function <span class="apidocSignatureSpan">iz.</span>number
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.ofType">
+            function <span class="apidocSignatureSpan">iz.</span>ofType
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.phone">
+            function <span class="apidocSignatureSpan">iz.</span>phone
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.postal">
+            function <span class="apidocSignatureSpan">iz.</span>postal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.required">
+            function <span class="apidocSignatureSpan">iz.</span>required
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.ssn">
+            function <span class="apidocSignatureSpan">iz.</span>ssn
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.string">
+            function <span class="apidocSignatureSpan">iz.</span>string
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.toString">
+            function <span class="apidocSignatureSpan">iz.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.addValidator">
+            function <span class="apidocSignatureSpan">iz.</span>validators.addValidator
+            <span class="apidocSignatureSpan">(name, validator, force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">iz.</span>validators</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.Gruntfile">module iz.Gruntfile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.Gruntfile.Gruntfile">
+            function <span class="apidocSignatureSpan">iz.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.addValidator">module iz.addValidator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.addValidator.addValidator">
+            function <span class="apidocSignatureSpan">iz.</span>addValidator
+            <span class="apidocSignatureSpan">(name, func, force)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.alphaNumeric">module iz.alphaNumeric</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.alphaNumeric.alphaNumeric">
+            function <span class="apidocSignatureSpan">iz.</span>alphaNumeric
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.amd">module iz.amd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.amd.amd">
+            function <span class="apidocSignatureSpan">iz.</span>amd
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.anArray">module iz.anArray</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.anArray.anArray">
+            function <span class="apidocSignatureSpan">iz.</span>anArray
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.are">module iz.are</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.are.are">
+            function <span class="apidocSignatureSpan">iz.</span>are
+            <span class="apidocSignatureSpan">(rules)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.between">module iz.between</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.between.between">
+            function <span class="apidocSignatureSpan">iz.</span>between
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.blank">module iz.blank</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.blank.blank">
+            function <span class="apidocSignatureSpan">iz.</span>blank
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.boolean">module iz.boolean</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.boolean.boolean">
+            function <span class="apidocSignatureSpan">iz.</span>boolean
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.cc">module iz.cc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.cc.cc">
+            function <span class="apidocSignatureSpan">iz.</span>cc
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.date">module iz.date</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.date.date">
+            function <span class="apidocSignatureSpan">iz.</span>date
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.decimal">module iz.decimal</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.decimal.decimal">
+            function <span class="apidocSignatureSpan">iz.</span>decimal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.email">module iz.email</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.email.email">
+            function <span class="apidocSignatureSpan">iz.</span>email
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.empty">module iz.empty</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.empty.empty">
+            function <span class="apidocSignatureSpan">iz.</span>empty
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.equal">module iz.equal</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.equal.equal">
+            function <span class="apidocSignatureSpan">iz.</span>equal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.extension">module iz.extension</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.extension.extension">
+            function <span class="apidocSignatureSpan">iz.</span>extension
+            <span class="apidocSignatureSpan">(obj1, obj2)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.fileExtension">module iz.fileExtension</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.fileExtension.fileExtension">
+            function <span class="apidocSignatureSpan">iz.</span>fileExtension
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.fileExtensionAudio">module iz.fileExtensionAudio</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.fileExtensionAudio.fileExtensionAudio">
+            function <span class="apidocSignatureSpan">iz.</span>fileExtensionAudio
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.fileExtensionImage">module iz.fileExtensionImage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.fileExtensionImage.fileExtensionImage">
+            function <span class="apidocSignatureSpan">iz.</span>fileExtensionImage
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.fileExtensionVideo">module iz.fileExtensionVideo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.fileExtensionVideo.fileExtensionVideo">
+            function <span class="apidocSignatureSpan">iz.</span>fileExtensionVideo
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.inArray">module iz.inArray</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.inArray.inArray">
+            function <span class="apidocSignatureSpan">iz.</span>inArray
+            <span class="apidocSignatureSpan">(value, arr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.int">module iz.int</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.int.int">
+            function <span class="apidocSignatureSpan">iz.</span>int
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.ip">module iz.ip</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.ip.ip">
+            function <span class="apidocSignatureSpan">iz.</span>ip
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.maxLength">module iz.maxLength</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.maxLength.maxLength">
+            function <span class="apidocSignatureSpan">iz.</span>maxLength
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.minLength">module iz.minLength</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.minLength.minLength">
+            function <span class="apidocSignatureSpan">iz.</span>minLength
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.multiple">module iz.multiple</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.multiple.multiple">
+            function <span class="apidocSignatureSpan">iz.</span>multiple
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.number">module iz.number</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.number.number">
+            function <span class="apidocSignatureSpan">iz.</span>number
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.ofType">module iz.ofType</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.ofType.ofType">
+            function <span class="apidocSignatureSpan">iz.</span>ofType
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.phone">module iz.phone</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.phone.phone">
+            function <span class="apidocSignatureSpan">iz.</span>phone
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.postal">module iz.postal</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.postal.postal">
+            function <span class="apidocSignatureSpan">iz.</span>postal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.required">module iz.required</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.required.required">
+            function <span class="apidocSignatureSpan">iz.</span>required
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.ssn">module iz.ssn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.ssn.ssn">
+            function <span class="apidocSignatureSpan">iz.</span>ssn
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.string">module iz.string</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.string.string">
+            function <span class="apidocSignatureSpan">iz.</span>string
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.toString">module iz.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.toString.toString">
+            function <span class="apidocSignatureSpan">iz.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.validators">module iz.validators</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.addValidator">
+            function <span class="apidocSignatureSpan">iz.validators.</span>addValidator
+            <span class="apidocSignatureSpan">(name, validator, force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.alphaNumeric">
+            function <span class="apidocSignatureSpan">iz.validators.</span>alphaNumeric
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.anArray">
+            function <span class="apidocSignatureSpan">iz.validators.</span>anArray
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.between">
+            function <span class="apidocSignatureSpan">iz.validators.</span>between
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.blank">
+            function <span class="apidocSignatureSpan">iz.validators.</span>blank
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.boolean">
+            function <span class="apidocSignatureSpan">iz.validators.</span>boolean
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.cc">
+            function <span class="apidocSignatureSpan">iz.validators.</span>cc
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.date">
+            function <span class="apidocSignatureSpan">iz.validators.</span>date
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.decimal">
+            function <span class="apidocSignatureSpan">iz.validators.</span>decimal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.email">
+            function <span class="apidocSignatureSpan">iz.validators.</span>email
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.empty">
+            function <span class="apidocSignatureSpan">iz.validators.</span>empty
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.equal">
+            function <span class="apidocSignatureSpan">iz.validators.</span>equal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.extension">
+            function <span class="apidocSignatureSpan">iz.validators.</span>extension
+            <span class="apidocSignatureSpan">(obj1, obj2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.fileExtension">
+            function <span class="apidocSignatureSpan">iz.validators.</span>fileExtension
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.fileExtensionAudio">
+            function <span class="apidocSignatureSpan">iz.validators.</span>fileExtensionAudio
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.fileExtensionImage">
+            function <span class="apidocSignatureSpan">iz.validators.</span>fileExtensionImage
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.fileExtensionVideo">
+            function <span class="apidocSignatureSpan">iz.validators.</span>fileExtensionVideo
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.inArray">
+            function <span class="apidocSignatureSpan">iz.validators.</span>inArray
+            <span class="apidocSignatureSpan">(value, arr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.int">
+            function <span class="apidocSignatureSpan">iz.validators.</span>int
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.ip">
+            function <span class="apidocSignatureSpan">iz.validators.</span>ip
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.maxLength">
+            function <span class="apidocSignatureSpan">iz.validators.</span>maxLength
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.minLength">
+            function <span class="apidocSignatureSpan">iz.validators.</span>minLength
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.multiple">
+            function <span class="apidocSignatureSpan">iz.validators.</span>multiple
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.number">
+            function <span class="apidocSignatureSpan">iz.validators.</span>number
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.ofType">
+            function <span class="apidocSignatureSpan">iz.validators.</span>ofType
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.phone">
+            function <span class="apidocSignatureSpan">iz.validators.</span>phone
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.postal">
+            function <span class="apidocSignatureSpan">iz.validators.</span>postal
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.required">
+            function <span class="apidocSignatureSpan">iz.validators.</span>required
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.ssn">
+            function <span class="apidocSignatureSpan">iz.validators.</span>ssn
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.string">
+            function <span class="apidocSignatureSpan">iz.validators.</span>string
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">iz.</span>validators</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.iz.validators.addValidator">module iz.validators.addValidator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.iz.validators.addValidator.addValidator">
+            function <span class="apidocSignatureSpan">iz.validators.</span>addValidator
+            <span class="apidocSignatureSpan">(name, validator, force)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz" id="apidoc.module.iz">module iz</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.iz" id="apidoc.element.iz.iz">
+        function <span class="apidocSignatureSpan"></span>iz
+        <span class="apidocSignatureSpan">(value, error_messages)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iz = function (value, error_messages) {
+    return (new Iz(value, error_messages));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.Gruntfile" id="apidoc.element.iz.Gruntfile">
+        function <span class="apidocSignatureSpan">iz.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+    &#x27;use strict&#x27;;
+
+    grunt.loadTasks(&#x27;tasks&#x27;);
+
+    grunt.loadNpmTasks(&#x27;grunt-simple-mocha&#x27;);
+    grunt.loadNpmTasks(&#x27;grunt-contrib-requirejs&#x27;);
+
+    grunt.registerTask(&#x27;build&#x27;, [&#x27;requirejs&#x27;]);
+    grunt.registerTask(&#x27;test&#x27;, [&#x27;simplemocha&#x27;]);
+    grunt.registerTask(&#x27;default&#x27;, [&#x27;test&#x27;, &#x27;build&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.addValidator" id="apidoc.element.iz.addValidator">
+        function <span class="apidocSignatureSpan">iz.</span>addValidator
+        <span class="apidocSignatureSpan">(name, func, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addValidator = function (name, func, force) {
+    validators.addValidator(name, func, force);
+    iz[name] = func;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var dummyValidator = function(value){
+    if(typeof value !==&#x27;string&#x27;){
+        return false;
+    }
+    return value.indexOf(&#x27;test&#x27;) === 0;
+};
+iz.<span class="apidocCodeKeywordSpan">addValidator</span>(&#x27;startsWithTest&#x27;, dummyValidator);
+iz.startsWithTest(&#x27;test string&#x27;);
+
+//for override of existing validator, only do this if you are sure.
+iz.addValidator(&#x27;string&#x27;, dummyValidator, true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.alphaNumeric" id="apidoc.element.iz.alphaNumeric">
+        function <span class="apidocSignatureSpan">iz.</span>alphaNumeric
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alphaNumeric = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.<span class="apidocCodeKeywordSpan">alphaNumeric</span>(*);               // Is number or string(contains only numbers or strings
+)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.amd" id="apidoc.element.iz.amd">
+        function <span class="apidocSignatureSpan">iz.</span>amd
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">amd = function (grunt) {
+    &#x27;use strict&#x27;;
+
+    grunt.config.set(&#x27;requirejs.iz&#x27;, {
+        options: {
+            appDir: &#x27;src/&#x27;,
+            dir: &#x27;amd/&#x27;,
+            cjsTranslate: true,
+            optimize: &#x27;none&#x27;
+        }
+    });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.anArray" id="apidoc.element.iz.anArray">
+        function <span class="apidocSignatureSpan">iz.</span>anArray
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">anArray = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.<span class="apidocCodeKeywordSpan">anArray</span>(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.are" id="apidoc.element.iz.are">
+        function <span class="apidocSignatureSpan">iz.</span>are
+        <span class="apidocSignatureSpan">(rules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">are = function (rules) {
+    return new Are(rules);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.between" id="apidoc.element.iz.between">
+        function <span class="apidocSignatureSpan">iz.</span>between
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).<span class="apidocCodeKeywordSpan">between</span>(2, 15).int().multiple(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.blank" id="apidoc.element.iz.blank">
+        function <span class="apidocSignatureSpan">iz.</span>blank
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blank = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.<span class="apidocCodeKeywordSpan">blank</span>(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.boolean" id="apidoc.element.iz.boolean">
+        function <span class="apidocSignatureSpan">iz.</span>boolean
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">boolean = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.<span class="apidocCodeKeywordSpan">boolean</span>(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.cc" id="apidoc.element.iz.cc">
+        function <span class="apidocSignatureSpan">iz.</span>cc
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cc = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.<span class="apidocCodeKeywordSpan">cc</span>(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.date" id="apidoc.element.iz.date">
+        function <span class="apidocSignatureSpan">iz.</span>date
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).required() //a value is required
+    iz(value).required().email() //value is required and is a valid email
+    iz(value).<span class="apidocCodeKeywordSpan">date</span>() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.decimal" id="apidoc.element.iz.decimal">
+        function <span class="apidocSignatureSpan">iz.</span>decimal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decimal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        number: &#x27;Cost must be given as a number&#x27;
+    },
+    ageErrors = {
+        int: &#x27;Must be an whole number&#x27;,
+        between: &#x27;This wine is too young, it\&#x27;s no good&#x27;
+    },
+    rules = {
+        cost: iz(wine.cost, costErrors).<span class="apidocCodeKeywordSpan">decimal</span>(),
+        age: iz(wine.age, ageErrors)
+            .int().between(17, 10000)
+    },
+    areRules = are(rules);
+
+areRules.valid(); // true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.email" id="apidoc.element.iz.email">
+        function <span class="apidocSignatureSpan">iz.</span>email
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">email = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`are.getInvalidFields()` too.
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).required() //a value is required
+    iz(value).required().<span class="apidocCodeKeywordSpan">email</span>() //value is required and is a valid email
+    iz(value).date() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.empty" id="apidoc.element.iz.empty">
+        function <span class="apidocSignatureSpan">iz.</span>empty
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">empty = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.<span class="apidocCodeKeywordSpan">empty</span>(*);                      // If an object, array or function contains no properties
+ true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.equal" id="apidoc.element.iz.equal">
+        function <span class="apidocSignatureSpan">iz.</span>equal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.<span class="apidocCodeKeywordSpan">equal</span>(*, *);                   // Any 2 things are strictly equal. If 2 objects their
+ internal properties will be checked. If the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.extension" id="apidoc.element.iz.extension">
+        function <span class="apidocSignatureSpan">iz.</span>extension
+        <span class="apidocSignatureSpan">(obj1, obj2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izExtension(obj1, obj2) {
+    var key;
+    if (typeof obj1 !== &#x27;object&#x27; || typeof obj2 !== &#x27;object&#x27;) {
+        return false;
+    }
+
+    for (key in obj2) {
+        if (obj2.hasOwnProperty(key) &#x26;&#x26; typeof obj1[key] === &#x27;undefined&#x27;) {
+            return false;
+        }
+    }
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.<span class="apidocCodeKeywordSpan">extension</span>(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.fileExtension" id="apidoc.element.iz.fileExtension">
+        function <span class="apidocSignatureSpan">iz.</span>fileExtension
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtension = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.<span class="apidocCodeKeywordSpan">fileExtension</span>(value, arr);     // Checks if the extension of value is in arr. An obj
+ can be provide, but must have indexOf defined.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.fileExtensionAudio" id="apidoc.element.iz.fileExtensionAudio">
+        function <span class="apidocSignatureSpan">iz.</span>fileExtensionAudio
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionAudio = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.<span class="apidocCodeKeywordSpan">fileExtensionAudio</span>(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.fileExtensionImage" id="apidoc.element.iz.fileExtensionImage">
+        function <span class="apidocSignatureSpan">iz.</span>fileExtensionImage
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionImage = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.<span class="apidocCodeKeywordSpan">fileExtensionImage</span>(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.fileExtensionVideo" id="apidoc.element.iz.fileExtensionVideo">
+        function <span class="apidocSignatureSpan">iz.</span>fileExtensionVideo
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionVideo = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.inArray" id="apidoc.element.iz.inArray">
+        function <span class="apidocSignatureSpan">iz.</span>inArray
+        <span class="apidocSignatureSpan">(value, arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izInArray(value, arr) {
+    if (typeof arr !== &#x27;object&#x27; || typeof arr.indexOf === &#x27;undefined&#x27;) {
+        return false;
+    }
+
+    if (arr.indexOf(value) !== -1) {
+        return true;
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.<span class="apidocCodeKeywordSpan">inArray</span>(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.int" id="apidoc.element.iz.int">
+        function <span class="apidocSignatureSpan">iz.</span>int
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">int = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).between(2, 15).<span class="apidocCodeKeywordSpan">int</span>().multiple(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.ip" id="apidoc.element.iz.ip">
+        function <span class="apidocSignatureSpan">iz.</span>ip
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ip = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.<span class="apidocCodeKeywordSpan">ip</span>(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.maxLength" id="apidoc.element.iz.maxLength">
+        function <span class="apidocSignatureSpan">iz.</span>maxLength
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maxLength = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.<span class="apidocCodeKeywordSpan">maxLength</span>(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+iz.ssn(*);                        // Is a social security number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.minLength" id="apidoc.element.iz.minLength">
+        function <span class="apidocSignatureSpan">iz.</span>minLength
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">minLength = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.<span class="apidocCodeKeywordSpan">minLength</span>(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.multiple" id="apidoc.element.iz.multiple">
+        function <span class="apidocSignatureSpan">iz.</span>multiple
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">multiple = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).between(2, 15).int().<span class="apidocCodeKeywordSpan">multiple</span>(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.number" id="apidoc.element.iz.number">
+        function <span class="apidocSignatureSpan">iz.</span>number
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.<span class="apidocCodeKeywordSpan">number</span>(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+iz.ssn(*);                        // Is a social security number
+iz.string(*);                     // Is the argument of type string
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.ofType" id="apidoc.element.iz.ofType">
+        function <span class="apidocSignatureSpan">iz.</span>ofType
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ofType = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.anArray(arr);                  // If arr is an array
+    iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.<span class="apidocCodeKeywordSpan">ofType</span>(obj, typeName);         // If it is a named object, and the name matches
+ the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.phone" id="apidoc.element.iz.phone">
+        function <span class="apidocSignatureSpan">iz.</span>phone
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">phone = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.<span class="apidocCodeKeywordSpan">phone</span>(str, canHaveExtension?); // Is an american phone number. Any punctuations
+ are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.postal" id="apidoc.element.iz.postal">
+        function <span class="apidocSignatureSpan">iz.</span>postal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.<span class="apidocCodeKeywordSpan">postal</span>(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.required" id="apidoc.element.iz.required">
+        function <span class="apidocSignatureSpan">iz.</span>required
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izRequired(obj) {
+    return obj !== undefined &#x26;&#x26; obj !== null &#x26;&#x26; obj !== &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+will log `[&#x27;5 is not between 100 and 200&#x27;]`. This works with
+`are.getInvalidFields()` too.
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).<span class="apidocCodeKeywordSpan">required</span>() //a value is required
+    iz(value).required().email() //value is required and is a valid email
+    iz(value).date() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.ssn" id="apidoc.element.iz.ssn">
+        function <span class="apidocSignatureSpan">iz.</span>ssn
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ssn = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.<span class="apidocCodeKeywordSpan">ssn</span>(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+----
+Adding custom validators is done though either the validation or iz object.  If the validator already exists, then addValidator
+will throw an exception.  You can force an override by adding a 3rd parameter of true.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.string" id="apidoc.element.iz.string">
+        function <span class="apidocSignatureSpan">iz.</span>string
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">string = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.<span class="apidocCodeKeywordSpan">string</span>(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+----
+Adding custom validators is done though either the validation or iz object.  If the validator already exists, then addValidator
+will throw an exception.  You can force an override by adding a 3rd parameter of true.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.toString" id="apidoc.element.iz.toString">
+        function <span class="apidocSignatureSpan">iz.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.addValidator" id="apidoc.element.iz.validators.addValidator">
+        function <span class="apidocSignatureSpan">iz.</span>validators.addValidator
+        <span class="apidocSignatureSpan">(name, validator, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addValidator(name, validator, force) {
+    if (typeof validators [name] !== &#x27;undefined&#x27;
+        &#x26;&#x26; force !== true) {
+        throw new Error(&#x27;Not adding validator because &#x27; + name + &#x27; already exists&#x27;);
+    }
+
+    if (name === &#x27;addValidator&#x27;) {
+        throw new Error(&#x27;Cannot override addValidator&#x27;);
+    }
+
+    validators[name] = validator;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.Gruntfile" id="apidoc.module.iz.Gruntfile">module iz.Gruntfile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.Gruntfile.Gruntfile" id="apidoc.element.iz.Gruntfile.Gruntfile">
+        function <span class="apidocSignatureSpan">iz.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+    &#x27;use strict&#x27;;
+
+    grunt.loadTasks(&#x27;tasks&#x27;);
+
+    grunt.loadNpmTasks(&#x27;grunt-simple-mocha&#x27;);
+    grunt.loadNpmTasks(&#x27;grunt-contrib-requirejs&#x27;);
+
+    grunt.registerTask(&#x27;build&#x27;, [&#x27;requirejs&#x27;]);
+    grunt.registerTask(&#x27;test&#x27;, [&#x27;simplemocha&#x27;]);
+    grunt.registerTask(&#x27;default&#x27;, [&#x27;test&#x27;, &#x27;build&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.addValidator" id="apidoc.module.iz.addValidator">module iz.addValidator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.addValidator.addValidator" id="apidoc.element.iz.addValidator.addValidator">
+        function <span class="apidocSignatureSpan">iz.</span>addValidator
+        <span class="apidocSignatureSpan">(name, func, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addValidator = function (name, func, force) {
+    validators.addValidator(name, func, force);
+    iz[name] = func;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var dummyValidator = function(value){
+    if(typeof value !==&#x27;string&#x27;){
+        return false;
+    }
+    return value.indexOf(&#x27;test&#x27;) === 0;
+};
+iz.<span class="apidocCodeKeywordSpan">addValidator</span>(&#x27;startsWithTest&#x27;, dummyValidator);
+iz.startsWithTest(&#x27;test string&#x27;);
+
+//for override of existing validator, only do this if you are sure.
+iz.addValidator(&#x27;string&#x27;, dummyValidator, true);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.alphaNumeric" id="apidoc.module.iz.alphaNumeric">module iz.alphaNumeric</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.alphaNumeric.alphaNumeric" id="apidoc.element.iz.alphaNumeric.alphaNumeric">
+        function <span class="apidocSignatureSpan">iz.</span>alphaNumeric
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alphaNumeric = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.<span class="apidocCodeKeywordSpan">alphaNumeric</span>(*);               // Is number or string(contains only numbers or strings
+)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.amd" id="apidoc.module.iz.amd">module iz.amd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.amd.amd" id="apidoc.element.iz.amd.amd">
+        function <span class="apidocSignatureSpan">iz.</span>amd
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">amd = function (grunt) {
+    &#x27;use strict&#x27;;
+
+    grunt.config.set(&#x27;requirejs.iz&#x27;, {
+        options: {
+            appDir: &#x27;src/&#x27;,
+            dir: &#x27;amd/&#x27;,
+            cjsTranslate: true,
+            optimize: &#x27;none&#x27;
+        }
+    });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.anArray" id="apidoc.module.iz.anArray">module iz.anArray</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.anArray.anArray" id="apidoc.element.iz.anArray.anArray">
+        function <span class="apidocSignatureSpan">iz.</span>anArray
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">anArray = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.<span class="apidocCodeKeywordSpan">anArray</span>(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.are" id="apidoc.module.iz.are">module iz.are</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.are.are" id="apidoc.element.iz.are.are">
+        function <span class="apidocSignatureSpan">iz.</span>are
+        <span class="apidocSignatureSpan">(rules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">are = function (rules) {
+    return new Are(rules);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.between" id="apidoc.module.iz.between">module iz.between</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.between.between" id="apidoc.element.iz.between.between">
+        function <span class="apidocSignatureSpan">iz.</span>between
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).<span class="apidocCodeKeywordSpan">between</span>(2, 15).int().multiple(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.blank" id="apidoc.module.iz.blank">module iz.blank</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.blank.blank" id="apidoc.element.iz.blank.blank">
+        function <span class="apidocSignatureSpan">iz.</span>blank
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blank = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.<span class="apidocCodeKeywordSpan">blank</span>(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.boolean" id="apidoc.module.iz.boolean">module iz.boolean</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.boolean.boolean" id="apidoc.element.iz.boolean.boolean">
+        function <span class="apidocSignatureSpan">iz.</span>boolean
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">boolean = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.<span class="apidocCodeKeywordSpan">boolean</span>(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.cc" id="apidoc.module.iz.cc">module iz.cc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.cc.cc" id="apidoc.element.iz.cc.cc">
+        function <span class="apidocSignatureSpan">iz.</span>cc
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cc = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.<span class="apidocCodeKeywordSpan">cc</span>(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.date" id="apidoc.module.iz.date">module iz.date</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.date.date" id="apidoc.element.iz.date.date">
+        function <span class="apidocSignatureSpan">iz.</span>date
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).required() //a value is required
+    iz(value).required().email() //value is required and is a valid email
+    iz(value).<span class="apidocCodeKeywordSpan">date</span>() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.decimal" id="apidoc.module.iz.decimal">module iz.decimal</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.decimal.decimal" id="apidoc.element.iz.decimal.decimal">
+        function <span class="apidocSignatureSpan">iz.</span>decimal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decimal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        number: &#x27;Cost must be given as a number&#x27;
+    },
+    ageErrors = {
+        int: &#x27;Must be an whole number&#x27;,
+        between: &#x27;This wine is too young, it\&#x27;s no good&#x27;
+    },
+    rules = {
+        cost: iz(wine.cost, costErrors).<span class="apidocCodeKeywordSpan">decimal</span>(),
+        age: iz(wine.age, ageErrors)
+            .int().between(17, 10000)
+    },
+    areRules = are(rules);
+
+areRules.valid(); // true
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.email" id="apidoc.module.iz.email">module iz.email</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.email.email" id="apidoc.element.iz.email.email">
+        function <span class="apidocSignatureSpan">iz.</span>email
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">email = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`are.getInvalidFields()` too.
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).required() //a value is required
+    iz(value).required().<span class="apidocCodeKeywordSpan">email</span>() //value is required and is a valid email
+    iz(value).date() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.empty" id="apidoc.module.iz.empty">module iz.empty</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.empty.empty" id="apidoc.element.iz.empty.empty">
+        function <span class="apidocSignatureSpan">iz.</span>empty
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">empty = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.<span class="apidocCodeKeywordSpan">empty</span>(*);                      // If an object, array or function contains no properties
+ true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.equal" id="apidoc.module.iz.equal">module iz.equal</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.equal.equal" id="apidoc.element.iz.equal.equal">
+        function <span class="apidocSignatureSpan">iz.</span>equal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.<span class="apidocCodeKeywordSpan">equal</span>(*, *);                   // Any 2 things are strictly equal. If 2 objects their
+ internal properties will be checked. If the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.extension" id="apidoc.module.iz.extension">module iz.extension</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.extension.extension" id="apidoc.element.iz.extension.extension">
+        function <span class="apidocSignatureSpan">iz.</span>extension
+        <span class="apidocSignatureSpan">(obj1, obj2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izExtension(obj1, obj2) {
+    var key;
+    if (typeof obj1 !== &#x27;object&#x27; || typeof obj2 !== &#x27;object&#x27;) {
+        return false;
+    }
+
+    for (key in obj2) {
+        if (obj2.hasOwnProperty(key) &#x26;&#x26; typeof obj1[key] === &#x27;undefined&#x27;) {
+            return false;
+        }
+    }
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.<span class="apidocCodeKeywordSpan">extension</span>(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.fileExtension" id="apidoc.module.iz.fileExtension">module iz.fileExtension</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.fileExtension.fileExtension" id="apidoc.element.iz.fileExtension.fileExtension">
+        function <span class="apidocSignatureSpan">iz.</span>fileExtension
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtension = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.<span class="apidocCodeKeywordSpan">fileExtension</span>(value, arr);     // Checks if the extension of value is in arr. An obj
+ can be provide, but must have indexOf defined.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.fileExtensionAudio" id="apidoc.module.iz.fileExtensionAudio">module iz.fileExtensionAudio</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.fileExtensionAudio.fileExtensionAudio" id="apidoc.element.iz.fileExtensionAudio.fileExtensionAudio">
+        function <span class="apidocSignatureSpan">iz.</span>fileExtensionAudio
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionAudio = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.<span class="apidocCodeKeywordSpan">fileExtensionAudio</span>(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.fileExtensionImage" id="apidoc.module.iz.fileExtensionImage">module iz.fileExtensionImage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.fileExtensionImage.fileExtensionImage" id="apidoc.element.iz.fileExtensionImage.fileExtensionImage">
+        function <span class="apidocSignatureSpan">iz.</span>fileExtensionImage
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionImage = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.<span class="apidocCodeKeywordSpan">fileExtensionImage</span>(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.fileExtensionVideo" id="apidoc.module.iz.fileExtensionVideo">module iz.fileExtensionVideo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.fileExtensionVideo.fileExtensionVideo" id="apidoc.element.iz.fileExtensionVideo.fileExtensionVideo">
+        function <span class="apidocSignatureSpan">iz.</span>fileExtensionVideo
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionVideo = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.inArray" id="apidoc.module.iz.inArray">module iz.inArray</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.inArray.inArray" id="apidoc.element.iz.inArray.inArray">
+        function <span class="apidocSignatureSpan">iz.</span>inArray
+        <span class="apidocSignatureSpan">(value, arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izInArray(value, arr) {
+    if (typeof arr !== &#x27;object&#x27; || typeof arr.indexOf === &#x27;undefined&#x27;) {
+        return false;
+    }
+
+    if (arr.indexOf(value) !== -1) {
+        return true;
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.<span class="apidocCodeKeywordSpan">inArray</span>(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.int" id="apidoc.module.iz.int">module iz.int</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.int.int" id="apidoc.element.iz.int.int">
+        function <span class="apidocSignatureSpan">iz.</span>int
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">int = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).between(2, 15).<span class="apidocCodeKeywordSpan">int</span>().multiple(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.ip" id="apidoc.module.iz.ip">module iz.ip</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.ip.ip" id="apidoc.element.iz.ip.ip">
+        function <span class="apidocSignatureSpan">iz.</span>ip
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ip = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.<span class="apidocCodeKeywordSpan">ip</span>(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.maxLength" id="apidoc.module.iz.maxLength">module iz.maxLength</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.maxLength.maxLength" id="apidoc.element.iz.maxLength.maxLength">
+        function <span class="apidocSignatureSpan">iz.</span>maxLength
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maxLength = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.<span class="apidocCodeKeywordSpan">maxLength</span>(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+iz.ssn(*);                        // Is a social security number
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.minLength" id="apidoc.module.iz.minLength">module iz.minLength</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.minLength.minLength" id="apidoc.element.iz.minLength.minLength">
+        function <span class="apidocSignatureSpan">iz.</span>minLength
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">minLength = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.<span class="apidocCodeKeywordSpan">minLength</span>(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.multiple" id="apidoc.module.iz.multiple">module iz.multiple</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.multiple.multiple" id="apidoc.element.iz.multiple.multiple">
+        function <span class="apidocSignatureSpan">iz.</span>multiple
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">multiple = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).between(2, 15).int().<span class="apidocCodeKeywordSpan">multiple</span>(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.number" id="apidoc.module.iz.number">module iz.number</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.number.number" id="apidoc.element.iz.number.number">
+        function <span class="apidocSignatureSpan">iz.</span>number
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.<span class="apidocCodeKeywordSpan">number</span>(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+iz.ssn(*);                        // Is a social security number
+iz.string(*);                     // Is the argument of type string
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.ofType" id="apidoc.module.iz.ofType">module iz.ofType</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.ofType.ofType" id="apidoc.element.iz.ofType.ofType">
+        function <span class="apidocSignatureSpan">iz.</span>ofType
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ofType = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.anArray(arr);                  // If arr is an array
+    iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.<span class="apidocCodeKeywordSpan">ofType</span>(obj, typeName);         // If it is a named object, and the name matches
+ the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.phone" id="apidoc.module.iz.phone">module iz.phone</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.phone.phone" id="apidoc.element.iz.phone.phone">
+        function <span class="apidocSignatureSpan">iz.</span>phone
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">phone = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.<span class="apidocCodeKeywordSpan">phone</span>(str, canHaveExtension?); // Is an american phone number. Any punctuations
+ are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.postal" id="apidoc.module.iz.postal">module iz.postal</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.postal.postal" id="apidoc.element.iz.postal.postal">
+        function <span class="apidocSignatureSpan">iz.</span>postal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.<span class="apidocCodeKeywordSpan">postal</span>(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.required" id="apidoc.module.iz.required">module iz.required</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.required.required" id="apidoc.element.iz.required.required">
+        function <span class="apidocSignatureSpan">iz.</span>required
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izRequired(obj) {
+    return obj !== undefined &#x26;&#x26; obj !== null &#x26;&#x26; obj !== &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+will log `[&#x27;5 is not between 100 and 200&#x27;]`. This works with
+`are.getInvalidFields()` too.
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).<span class="apidocCodeKeywordSpan">required</span>() //a value is required
+    iz(value).required().email() //value is required and is a valid email
+    iz(value).date() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.ssn" id="apidoc.module.iz.ssn">module iz.ssn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.ssn.ssn" id="apidoc.element.iz.ssn.ssn">
+        function <span class="apidocSignatureSpan">iz.</span>ssn
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ssn = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.<span class="apidocCodeKeywordSpan">ssn</span>(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+----
+Adding custom validators is done though either the validation or iz object.  If the validator already exists, then addValidator
+will throw an exception.  You can force an override by adding a 3rd parameter of true.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.string" id="apidoc.module.iz.string">module iz.string</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.string.string" id="apidoc.element.iz.string.string">
+        function <span class="apidocSignatureSpan">iz.</span>string
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">string = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.<span class="apidocCodeKeywordSpan">string</span>(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+----
+Adding custom validators is done though either the validation or iz object.  If the validator already exists, then addValidator
+will throw an exception.  You can force an override by adding a 3rd parameter of true.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.toString" id="apidoc.module.iz.toString">module iz.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.toString.toString" id="apidoc.element.iz.toString.toString">
+        function <span class="apidocSignatureSpan">iz.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.validators" id="apidoc.module.iz.validators">module iz.validators</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.addValidator" id="apidoc.element.iz.validators.addValidator">
+        function <span class="apidocSignatureSpan">iz.validators.</span>addValidator
+        <span class="apidocSignatureSpan">(name, validator, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addValidator(name, validator, force) {
+    if (typeof validators [name] !== &#x27;undefined&#x27;
+        &#x26;&#x26; force !== true) {
+        throw new Error(&#x27;Not adding validator because &#x27; + name + &#x27; already exists&#x27;);
+    }
+
+    if (name === &#x27;addValidator&#x27;) {
+        throw new Error(&#x27;Cannot override addValidator&#x27;);
+    }
+
+    validators[name] = validator;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var dummyValidator = function(value){
+    if(typeof value !==&#x27;string&#x27;){
+        return false;
+    }
+    return value.indexOf(&#x27;test&#x27;) === 0;
+};
+iz.<span class="apidocCodeKeywordSpan">addValidator</span>(&#x27;startsWithTest&#x27;, dummyValidator);
+iz.startsWithTest(&#x27;test string&#x27;);
+
+//for override of existing validator, only do this if you are sure.
+iz.addValidator(&#x27;string&#x27;, dummyValidator, true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.alphaNumeric" id="apidoc.element.iz.validators.alphaNumeric">
+        function <span class="apidocSignatureSpan">iz.validators.</span>alphaNumeric
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alphaNumeric = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.<span class="apidocCodeKeywordSpan">alphaNumeric</span>(*);               // Is number or string(contains only numbers or strings
+)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.anArray" id="apidoc.element.iz.validators.anArray">
+        function <span class="apidocSignatureSpan">iz.validators.</span>anArray
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">anArray = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.<span class="apidocCodeKeywordSpan">anArray</span>(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.between" id="apidoc.element.iz.validators.between">
+        function <span class="apidocSignatureSpan">iz.validators.</span>between
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).<span class="apidocCodeKeywordSpan">between</span>(2, 15).int().multiple(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.blank" id="apidoc.element.iz.validators.blank">
+        function <span class="apidocSignatureSpan">iz.validators.</span>blank
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blank = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.<span class="apidocCodeKeywordSpan">blank</span>(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.boolean" id="apidoc.element.iz.validators.boolean">
+        function <span class="apidocSignatureSpan">iz.validators.</span>boolean
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">boolean = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.<span class="apidocCodeKeywordSpan">boolean</span>(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.cc" id="apidoc.element.iz.validators.cc">
+        function <span class="apidocSignatureSpan">iz.validators.</span>cc
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cc = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Validations (true case in comments):
+
+iz.alphaNumeric(*);               // Is number or string(contains only numbers or strings)
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.<span class="apidocCodeKeywordSpan">cc</span>(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.date" id="apidoc.element.iz.validators.date">
+        function <span class="apidocSignatureSpan">iz.validators.</span>date
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).required() //a value is required
+    iz(value).required().email() //value is required and is a valid email
+    iz(value).<span class="apidocCodeKeywordSpan">date</span>() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.decimal" id="apidoc.element.iz.validators.decimal">
+        function <span class="apidocSignatureSpan">iz.validators.</span>decimal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decimal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        number: &#x27;Cost must be given as a number&#x27;
+    },
+    ageErrors = {
+        int: &#x27;Must be an whole number&#x27;,
+        between: &#x27;This wine is too young, it\&#x27;s no good&#x27;
+    },
+    rules = {
+        cost: iz(wine.cost, costErrors).<span class="apidocCodeKeywordSpan">decimal</span>(),
+        age: iz(wine.age, ageErrors)
+            .int().between(17, 10000)
+    },
+    areRules = are(rules);
+
+areRules.valid(); // true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.email" id="apidoc.element.iz.validators.email">
+        function <span class="apidocSignatureSpan">iz.validators.</span>email
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">email = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`are.getInvalidFields()` too.
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).required() //a value is required
+    iz(value).required().<span class="apidocCodeKeywordSpan">email</span>() //value is required and is a valid email
+    iz(value).date() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+
+Validations (true case in comments):
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.empty" id="apidoc.element.iz.validators.empty">
+        function <span class="apidocSignatureSpan">iz.validators.</span>empty
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">empty = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.between(number, start, end);   // Number is start or greater but less than or equal to end, all params numeric
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.<span class="apidocCodeKeywordSpan">empty</span>(*);                      // If an object, array or function contains no properties
+ true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.equal" id="apidoc.element.iz.validators.equal">
+        function <span class="apidocSignatureSpan">iz.validators.</span>equal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.blank(*);                      // Empty string
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.<span class="apidocCodeKeywordSpan">equal</span>(*, *);                   // Any 2 things are strictly equal. If 2 objects their
+ internal properties will be checked. If the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.extension" id="apidoc.element.iz.validators.extension">
+        function <span class="apidocSignatureSpan">iz.validators.</span>extension
+        <span class="apidocSignatureSpan">(obj1, obj2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izExtension(obj1, obj2) {
+    var key;
+    if (typeof obj1 !== &#x27;object&#x27; || typeof obj2 !== &#x27;object&#x27;) {
+        return false;
+    }
+
+    for (key in obj2) {
+        if (obj2.hasOwnProperty(key) &#x26;&#x26; typeof obj1[key] === &#x27;undefined&#x27;) {
+            return false;
+        }
+    }
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.boolean(*);                    // true, false, 0, 1
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.<span class="apidocCodeKeywordSpan">extension</span>(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.fileExtension" id="apidoc.element.iz.validators.fileExtension">
+        function <span class="apidocSignatureSpan">iz.validators.</span>fileExtension
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtension = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.cc(*);                         // Luhn checksum approved value
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.<span class="apidocCodeKeywordSpan">fileExtension</span>(value, arr);     // Checks if the extension of value is in arr. An obj
+ can be provide, but must have indexOf defined.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.fileExtensionAudio" id="apidoc.element.iz.validators.fileExtensionAudio">
+        function <span class="apidocSignatureSpan">iz.validators.</span>fileExtensionAudio
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionAudio = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.date(*);                       // Is a date obj or is a string that is easily converted to a date
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.<span class="apidocCodeKeywordSpan">fileExtensionAudio</span>(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.fileExtensionImage" id="apidoc.element.iz.validators.fileExtensionImage">
+        function <span class="apidocSignatureSpan">iz.validators.</span>fileExtensionImage
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionImage = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.decimal(*);                    // int or float
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.<span class="apidocCodeKeywordSpan">fileExtensionImage</span>(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.fileExtensionVideo" id="apidoc.element.iz.validators.fileExtensionVideo">
+        function <span class="apidocSignatureSpan">iz.validators.</span>fileExtensionVideo
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExtensionVideo = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.inArray" id="apidoc.element.iz.validators.inArray">
+        function <span class="apidocSignatureSpan">iz.validators.</span>inArray
+        <span class="apidocSignatureSpan">(value, arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izInArray(value, arr) {
+    if (typeof arr !== &#x27;object&#x27; || typeof arr.indexOf === &#x27;undefined&#x27;) {
+        return false;
+    }
+
+    if (arr.indexOf(value) !== -1) {
+        return true;
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.email(*);                      // Seems like a valid email address
+iz.empty(*);                      // If an object, array or function contains no properties true. All primitives return true.
+iz.equal(*, *);                   // Any 2 things are strictly equal. If 2 objects their internal properties will be checked. If
+ the first parameter has an equals method that will be run instead
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.<span class="apidocCodeKeywordSpan">inArray</span>(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.int" id="apidoc.element.iz.validators.int">
+        function <span class="apidocSignatureSpan">iz.validators.</span>int
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">int = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).between(2, 15).<span class="apidocCodeKeywordSpan">int</span>().multiple(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.ip" id="apidoc.element.iz.validators.ip">
+        function <span class="apidocSignatureSpan">iz.validators.</span>ip
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ip = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.extension(ob1, ob2);           // If obj2&#x27;s methods are all found in obj1
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.<span class="apidocCodeKeywordSpan">ip</span>(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.maxLength" id="apidoc.element.iz.validators.maxLength">
+        function <span class="apidocSignatureSpan">iz.validators.</span>maxLength
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maxLength = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.<span class="apidocCodeKeywordSpan">maxLength</span>(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+iz.ssn(*);                        // Is a social security number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.minLength" id="apidoc.element.iz.validators.minLength">
+        function <span class="apidocSignatureSpan">iz.validators.</span>minLength
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">minLength = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.fileExtension(value, arr);     // Checks if the extension of value is in arr. An obj can be provide, but must have indexOf defined
+.
+iz.fileExtensionAudio(value);     // Check against mp3, ogg, wav, aac
+iz.fileExtensionImage(value);     // Check against png, jpg, jpeg, gif, bmp, svg, gif
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.<span class="apidocCodeKeywordSpan">minLength</span>(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.number(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.multiple" id="apidoc.element.iz.validators.multiple">
+        function <span class="apidocSignatureSpan">iz.validators.</span>multiple
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">multiple = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are **not** using a module system you may want to take a look at OneJS/Browserify, and how we did client side builds in v0
+.2.0 (just view the tag on github).
+
+API
+====
+Chaining:
+----
+
+iz(10).between(2, 15).int().<span class="apidocCodeKeywordSpan">multiple</span>(5); //why yes, yes it is
+iz(10).not().between(1, 5); // the fancy not operator will cause the opposite result to happen next. This is also true!
+
+iz(), and all validation commands return an Iz object. An iz object always contains an `errors`{array} and `valid`{bool}. `errors
+` will be filled with a default error messsage for each incorrect field. To provide custom error messages you can do the following
+:
+
+var errors = {
+    between: &#x27;Is not between, please fix&#x27;,
+    not_between: &#x27;Value must be between!&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.number" id="apidoc.element.iz.validators.number">
+        function <span class="apidocSignatureSpan">iz.validators.</span>number
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iz.inArray(value, arr);           // If * is in the array
+iz.anArray(arr);                  // If arr is an array
+iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+iz.minLength(val, min);           // val (str or arr) is greater than min
+iz.maxLength(val, max);           // val (str or arr) is shorter than max
+iz.multiple(num, mult);           // Number is multiple of another number
+iz.<span class="apidocCodeKeywordSpan">number</span>(*);                     // Is either an int or decimal
+iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+iz.postal(*);                     // Is a postal code or zip code
+iz.required(*);                   // Is not null, undefined or an empty string
+iz.ssn(*);                        // Is a social security number
+iz.string(*);                     // Is the argument of type string
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.ofType" id="apidoc.element.iz.validators.ofType">
+        function <span class="apidocSignatureSpan">iz.validators.</span>ofType
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ofType = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.anArray(arr);                  // If arr is an array
+    iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.<span class="apidocCodeKeywordSpan">ofType</span>(obj, typeName);         // If it is a named object, and the name matches
+ the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.phone" id="apidoc.element.iz.validators.phone">
+        function <span class="apidocSignatureSpan">iz.validators.</span>phone
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">phone = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.int(*, bool (optional));       // Is an int. If the 2nd variable is true (false by default) a decimal is allowed
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.<span class="apidocCodeKeywordSpan">phone</span>(str, canHaveExtension?); // Is an american phone number. Any punctuations
+ are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.postal" id="apidoc.element.iz.validators.postal">
+        function <span class="apidocSignatureSpan">iz.validators.</span>postal
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postal = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.ip(str);                       // str resembles an IPV4 or IPV6 address
+    iz.minLength(val, min);           // val (str or arr) is greater than min
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.<span class="apidocCodeKeywordSpan">postal</span>(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.required" id="apidoc.element.iz.validators.required">
+        function <span class="apidocSignatureSpan">iz.validators.</span>required
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function izRequired(obj) {
+    return obj !== undefined &#x26;&#x26; obj !== null &#x26;&#x26; obj !== &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+will log `[&#x27;5 is not between 100 and 200&#x27;]`. This works with
+`are.getInvalidFields()` too.
+
+Required Fields:
+----
+In most cases, you&#x27;ll only want to validate values when they exist. By default iz functions in this way. If you want to force
+ the presence of a value you can use the `required` method.
+
+    iz(value).<span class="apidocCodeKeywordSpan">required</span>() //a value is required
+    iz(value).required().email() //value is required and is a valid email
+    iz(value).date() //value is not required but must be a date if provided
+
+Validators:
+----
+All validators (apart from iz.required) return true if no value is provided (e.g. null, undefined or &#x27;&#x27;).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.ssn" id="apidoc.element.iz.validators.ssn">
+        function <span class="apidocSignatureSpan">iz.validators.</span>ssn
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ssn = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.maxLength(val, max);           // val (str or arr) is shorter than max
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.<span class="apidocCodeKeywordSpan">ssn</span>(*);                        // Is a social security number
+    iz.string(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+----
+Adding custom validators is done though either the validation or iz object.  If the validator already exists, then addValidator
+will throw an exception.  You can force an override by adding a 3rd parameter of true.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.string" id="apidoc.element.iz.validators.string">
+        function <span class="apidocSignatureSpan">iz.validators.</span>string
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">string = function (val) {
+    return !izRequired(val) || validator.apply(this, Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    iz.multiple(num, mult);           // Number is multiple of another number
+    iz.number(*);                     // Is either an int or decimal
+    iz.ofType(obj, typeName);         // If it is a named object, and the name matches the string
+    iz.phone(str, canHaveExtension?); // Is an american phone number. Any punctuations are allowed.
+    iz.postal(*);                     // Is a postal code or zip code
+    iz.required(*);                   // Is not null, undefined or an empty string
+    iz.ssn(*);                        // Is a social security number
+    iz.<span class="apidocCodeKeywordSpan">string</span>(*);                     // Is the argument of type string
+
+Almost all possible use cases that will definitely work (and definitely not work) are in the spec folder.
+
+Custom Validators:
+----
+Adding custom validators is done though either the validation or iz object.  If the validator already exists, then addValidator
+will throw an exception.  You can force an override by adding a 3rd parameter of true.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.iz.validators.addValidator" id="apidoc.module.iz.validators.addValidator">module iz.validators.addValidator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.iz.validators.addValidator.addValidator" id="apidoc.element.iz.validators.addValidator.addValidator">
+        function <span class="apidocSignatureSpan">iz.validators.</span>addValidator
+        <span class="apidocSignatureSpan">(name, validator, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addValidator(name, validator, force) {
+    if (typeof validators [name] !== &#x27;undefined&#x27;
+        &#x26;&#x26; force !== true) {
+        throw new Error(&#x27;Not adding validator because &#x27; + name + &#x27; already exists&#x27;);
+    }
+
+    if (name === &#x27;addValidator&#x27;) {
+        throw new Error(&#x27;Cannot override addValidator&#x27;);
+    }
+
+    validators[name] = validator;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var dummyValidator = function(value){
+    if(typeof value !==&#x27;string&#x27;){
+        return false;
+    }
+    return value.indexOf(&#x27;test&#x27;) === 0;
+};
+iz.<span class="apidocCodeKeywordSpan">addValidator</span>(&#x27;startsWithTest&#x27;, dummyValidator);
+iz.startsWithTest(&#x27;test string&#x27;);
+
+//for override of existing validator, only do this if you are sure.
+iz.addValidator(&#x27;string&#x27;, dummyValidator, true);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
