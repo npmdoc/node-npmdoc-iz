@@ -1,4 +1,7 @@
-# api documentation for  [iz (v0.7.1)](https://github.com/parris/iz)  [![npm package](https://img.shields.io/npm/v/npmdoc-iz.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-iz) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-iz.svg)](https://travis-ci.org/npmdoc/node-npmdoc-iz)
+# npmdoc-iz
+
+#### basic api documentation for  [iz (v0.7.1)](https://github.com/parris/iz)  [![npm package](https://img.shields.io/npm/v/npmdoc-iz.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-iz) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-iz.svg)](https://travis-ci.org/npmdoc/node-npmdoc-iz)
+
 #### Validation for node and the web.
 
 [![NPM](https://nodei.co/npm/iz.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/iz)
@@ -64,7 +67,8 @@
         "test": "./node_modules/.bin/grunt test"
     },
     "url": "https://github.com/parris/iz/issues",
-    "version": "0.7.1"
+    "version": "0.7.1",
+    "bin": {}
 }
 ```
 
